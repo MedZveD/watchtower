@@ -1,0 +1,11 @@
+services:
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - TZ=Africa/Kampala 
+      # Or you can use HV time 
+      #- /etc/localtime:/etc/localtime:ro
+      - WATCHTOWER_SCHEDULE=0 0 4 * * 6
+      # at 4:00 am every Saturday
