@@ -5,8 +5,13 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - TZ=Africa/Kampala 
+      - TZ=${TZ} 
       # Or you can use HV time 
       #- /etc/localtime:/etc/localtime:ro
       - WATCHTOWER_SCHEDULE=0 0 4 * * 6
       # at 4:00 am every Saturday
+
+      #Sent messages to Gotify
+      - WATCHTOWER_NOTIFICATIONS=gotify 
+      - WATCHTOWER_NOTIFICATION_GOTIFY_URL=${FQDN:port}  #change env
+      - WATCHTOWER_NOTIFICATION_GOTIFY_TOKEN=${Token}  #change env
