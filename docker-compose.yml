@@ -13,5 +13,5 @@ services:
 
       #Sent messages to Gotify
       - WATCHTOWER_NOTIFICATIONS=gotify 
-      - WATCHTOWER_NOTIFICATION_GOTIFY_URL=${FQDN:port}  #change env
+      - WATCHTOWER_NOTIFICATION_GOTIFY_URL=${FQDN_port}  #change env
       - WATCHTOWER_NOTIFICATION_GOTIFY_TOKEN=${Token}  #change env
